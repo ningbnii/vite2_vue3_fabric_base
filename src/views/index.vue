@@ -28,6 +28,9 @@ onMounted(() => {
     left: canvasBox.value.clientWidth / 2,
     top: canvasBox.value.clientHeight / 2,
   })
+  rect.set('fill', 'black')
+  rect.set({ strokeWidth: 5, stroke: 'rgba(100,200,200,0.5)' })
+  rect.set('angle', 15).set('flipY', true)
   var circle = new fabric.Circle({
     radius: 20,
     fill: 'green',
@@ -42,6 +45,9 @@ onMounted(() => {
     top: 50,
   })
   canvas.add(circle, triangle)
+  var rect2 = new fabric.Rect({ left: 100, top: 100, width: 10, height: 20, fill: '#f55', opacity: 0.7 })
+  canvas.add(rect2)
+  console.log(rect.get('width'))
 })
 </script>
 <style lang="scss" scoped>
